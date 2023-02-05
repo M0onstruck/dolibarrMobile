@@ -1,39 +1,18 @@
-import 'package:dolibarrmobile/accueil.dart';
-import 'package:dolibarrmobile/commandes.dart';
 import 'package:dolibarrmobile/mon_profile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+class Accueil extends StatelessWidget {
+  const Accueil({super.key});
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: RootPage(),
-    );
-  }
-}
-
-class RootPage extends StatefulWidget {
-  const RootPage({super.key});
-
-  @override
-  State<RootPage> createState() => _RootPageState();
-}
-
-class _RootPageState extends State<RootPage> {
-  int currentPage = 0;
-  List<Widget> pages = [Accueil(), MonProfile(), Commandes()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('Accueil'),
+        centerTitle: true,
+      ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -42,12 +21,16 @@ class _RootPageState extends State<RootPage> {
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Text(
-                'Menu',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
+              child: Column(
+                children: [
+                  Icon(
+                    Icons.person,
+                    size: 70,
+                    color: Colors.white,
+                  ),
+                  Text('Jean DuTest', style: TextStyle(color: Colors.white54)),
+                  Text('Google')
+                ],
               ),
             ),
             ListTile(
@@ -71,6 +54,18 @@ class _RootPageState extends State<RootPage> {
             ListTile(
               leading: Icon(Icons.attach_money_sharp),
               title: Text('Devis'),
+            ),
+            ListTile(
+              leading: Icon(Icons.delivery_dining_outlined),
+              title: Text('Bons de livraison'),
+            ),
+            ListTile(
+              leading: Icon(Icons.format_list_bulleted_outlined),
+              title: Text('Interventions'),
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Déconnexion'),
             ),
           ],
         ),
