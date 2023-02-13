@@ -1,80 +1,96 @@
-import 'package:dolibarrmobile/accueil.dart';
-import 'package:dolibarrmobile/commandes.dart';
-import 'package:dolibarrmobile/mon_profile.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+void main(List<String> args) {
+  runApp(new MaterialApp(
+    home : MyApp(),
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState CreateState() => _MyAppState();
 
   @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
+  }
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: RootPage(),
+    return Scaffold(
+      appBar: new AppBar(
+        title: Text("Menu"),
+        backgroundColor: Colors.green[800],
+      ),
+    backgroundColor: Colors.green[100],
+
+    drawer: new Drawer(
+      child: ListView(
+        children: <Widget>[
+          UserAccountsDrawerHeader(
+          accountName: new Text("Admin", style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 17),),
+          accountEmail: new Text("Admin@admin.com"),
+      ),
+          ListTile(
+            leading: Icon(Icons.person),
+            title: Text("Profile"),
+          ),
+        ListTile(
+        leading: Icon(Icons.person),
+    title: Text("Profile"),),
+        ],
+      ),
+    ),
+    body: Container(
+      padding: EdgeInsets.all(30.0),
+      child: GridView.count(
+        crossAxisCount: 2,
+        children: <Widget>[
+          Mymenu(title: "Mon Profile", icon: Icons.person, warna: Colors.orange),
+          Mymenu(title: "Tableau de Bord", icon: Icons.developer_board, warna: Colors.orange),
+          Mymenu(title: "Societe", icon: Icons.precision_manufacturing, warna: Colors.orange),
+          Mymenu(title: "Modules", icon: Icons.view_module, warna: Colors.orange),
+          Mymenu(title: "Utilisateurs", icon: Icons.supervised_user_circle, warna: Colors.orange),
+          Mymenu(title: "Groupes", icon: Icons.groups, warna: Colors.orange),
+        ],
+      ),
+    ),
     );
   }
 }
 
-class RootPage extends StatefulWidget {
-  const RootPage({super.key});
+class Mymenu extends StatelessWidget {
+  Mymenu({required this.title, required this.icon, required this.warna});
 
-  @override
-  State<RootPage> createState() => _RootPageState();
-}
+  final String title;
+  final IconData icon;
+  final MaterialColor warna;
 
-class _RootPageState extends State<RootPage> {
-  int currentPage = 0;
-  List<Widget> pages = [Accueil(), MonProfile(), Commandes()];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
+    return Card(
+      margin: EdgeInsets.all(8.0),
+      child: InkWell(
+        onTap: () {},
+        splashColor: Colors.green,
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Icon(
+                icon,
+                size: 70.0,
+                color: warna,
               ),
-              child: Text(
-                'Menu',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Accueil'),
-            ),
-            ListTile(
-              leading: Icon(Icons.account_circle),
-              title: Text('Mon Profil'),
-              onTap: () {
-                Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (BuildContext context) {
-                  return MonProfile();
-                }));
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.feed),
-              title: Text('Commandes'),
-            ),
-            ListTile(
-              leading: Icon(Icons.attach_money_sharp),
-              title: Text('Devis'),
-            ),
-          ],
+              Text(title, style: new TextStyle(fontSize: 17.0))
+            ],
+          ),
         ),
       ),
     );
   }
+
 }
