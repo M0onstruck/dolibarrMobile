@@ -1,4 +1,4 @@
-# dolibarrmobile
+# dolibar
 
 A new Flutter project.
 
