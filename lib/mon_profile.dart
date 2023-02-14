@@ -1,4 +1,4 @@
-import 'package:dolibarrmobile/accueil.dart';
+import '/accueil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 

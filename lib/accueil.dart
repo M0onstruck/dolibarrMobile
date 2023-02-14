@@ -1,4 +1,4 @@
-import 'package:dolibarrmobile/mon_profile.dart';
+import 'package:dolibar/mon_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
