@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 void main(List<String> args) {
   runApp(new MaterialApp(
-    home : MyApp(),
+    home: MyApp(),
   ));
 }
 
@@ -11,10 +11,9 @@ class MyApp extends StatefulWidget {
   _MyAppState CreateState() => _MyAppState();
 
   @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    throw UnimplementedError();
-  }
+  State<MyApp> createState() =>
+      // TODO: implement createState
+      _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
@@ -25,39 +24,55 @@ class _MyAppState extends State<MyApp> {
         title: Text("Menu"),
         backgroundColor: Colors.green[800],
       ),
-    backgroundColor: Colors.green[100],
-
-    drawer: new Drawer(
-      child: ListView(
-        children: <Widget>[
-          UserAccountsDrawerHeader(
-          accountName: new Text("Admin", style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 17),),
-          accountEmail: new Text("Admin@admin.com"),
+      backgroundColor: Colors.green[100],
+      drawer: new Drawer(
+        child: ListView(
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              accountName: new Text(
+                "Admin",
+                style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+              ),
+              accountEmail: new Text("Admin@admin.com"),
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Profile"),
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Profile"),
+            ),
+          ],
+        ),
       ),
-          ListTile(
-            leading: Icon(Icons.person),
-            title: Text("Profile"),
-          ),
-        ListTile(
-        leading: Icon(Icons.person),
-    title: Text("Profile"),),
-        ],
+      body: Container(
+        padding: EdgeInsets.all(30.0),
+        child: GridView.count(
+          crossAxisCount: 2,
+          children: <Widget>[
+            Mymenu(
+                title: "Mon Profile", icon: Icons.person, warna: Colors.orange),
+            Mymenu(
+                title: "Tableau de Bord",
+                icon: Icons.developer_board,
+                warna: Colors.orange),
+            Mymenu(
+                title: "Societe",
+                icon: Icons.precision_manufacturing,
+                warna: Colors.orange),
+            Mymenu(
+                title: "Modules",
+                icon: Icons.view_module,
+                warna: Colors.orange),
+            Mymenu(
+                title: "Utilisateurs",
+                icon: Icons.supervised_user_circle,
+                warna: Colors.orange),
+            Mymenu(title: "Groupes", icon: Icons.groups, warna: Colors.orange),
+          ],
+        ),
       ),
-    ),
-    body: Container(
-      padding: EdgeInsets.all(30.0),
-      child: GridView.count(
-        crossAxisCount: 2,
-        children: <Widget>[
-          Mymenu(title: "Mon Profile", icon: Icons.person, warna: Colors.orange),
-          Mymenu(title: "Tableau de Bord", icon: Icons.developer_board, warna: Colors.orange),
-          Mymenu(title: "Societe", icon: Icons.precision_manufacturing, warna: Colors.orange),
-          Mymenu(title: "Modules", icon: Icons.view_module, warna: Colors.orange),
-          Mymenu(title: "Utilisateurs", icon: Icons.supervised_user_circle, warna: Colors.orange),
-          Mymenu(title: "Groupes", icon: Icons.groups, warna: Colors.orange),
-        ],
-      ),
-    ),
     );
   }
 }
@@ -92,5 +107,4 @@ class Mymenu extends StatelessWidget {
       ),
     );
   }
-
 }
