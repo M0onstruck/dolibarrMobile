@@ -1,5 +1,7 @@
-name: dolibarrmobile
-description: A new Flutter project.
+name: myapp
+description: A exported flutter project from FUNCTION12
+
+
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -19,7 +21,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.19.0 <3.0.0'
+  sdk: '>=2.18.2 <3.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -35,6 +37,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  google_fonts: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -59,9 +62,68 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-    - images/
+  # assets:
+  #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/page-1/images/exit-svgrepo-com-1-1.png
+    - assets/page-1/images/rectangle-60.png
+    - assets/page-1/images/vector.png
+    - assets/page-1/images/mansion-f-svgrepo-com-1.png
+    - assets/page-1/images/clipboard-svgrepo-com-1.png
+    - assets/page-1/images/vector-wpC.png
+    - assets/page-1/images/vector-vjz.png
+    - assets/page-1/images/vector-Rfv.png
+    - assets/page-1/images/clipboard-svgrepo-com-1-NLG.png
+    - assets/page-1/images/vector-LDn.png
+    - assets/page-1/images/applications-svgrepo-com-1.png
+    - assets/page-1/images/vector-ghN.png
+    - assets/page-1/images/clipboard-svgrepo-com-1-28x.png
+    - assets/page-1/images/vector-Fyi.png
+    - assets/page-1/images/mon-profile.png
+    - assets/page-1/images/rectangle-62.png
+    - assets/page-1/images/clipboard-svgrepo-com-1-WWt.png
+    - assets/page-1/images/rectangle-64.png
+    - assets/page-1/images/person-svgrepo-com-1.png
+    - assets/page-1/images/rectangle-65.png
+    - assets/page-1/images/rectangle-61.png
+    - assets/page-1/images/rectangle-60-SgY.png
+    - assets/page-1/images/vector-pKa.png
+    - assets/page-1/images/clipboard-svgrepo-com-1-1gk.png
+    - assets/page-1/images/phone-free-material-svgrepo-com-1.png
+    - assets/page-1/images/applications-svgrepo-com-1-9f6.png
+    - assets/page-1/images/vector-8zc.png
+    - assets/page-1/images/mansion-f-svgrepo-com-1-Nzk.png
+    - assets/page-1/images/vector-k7r.png
+    - assets/page-1/images/clipboard-svgrepo-com-1-gsz.png
+    - assets/page-1/images/clipboard-svgrepo-com-1-kX2.png
+    - assets/page-1/images/phone-svgrepo-com-1-1.png
+    - assets/page-1/images/person-combination-svgrepo-com-1.png
+    - assets/page-1/images/vector-aHe.png
+    - assets/page-1/images/vector-4Cp.png
+    - assets/page-1/images/person-svgrepo-com-1-Zfv.png
+    - assets/page-1/images/person-combination-svgrepo-com-1-vSc.png
+    - assets/page-1/images/applications-svgrepo-com-1-C8Y.png
+    - assets/page-1/images/clipboard-svgrepo-com-1-D4t.png
+    - assets/page-1/images/person-svgrepo-com-1-oA8.png
+    - assets/page-1/images/clipboard-svgrepo-com-1-Lhn.png
+    - assets/page-1/images/mail-svgrepo-com-1-1.png
+    - assets/page-1/images/mansion-f-svgrepo-com-1-TiG.png
+    - assets/page-1/images/mansion-f-svgrepo-com-1-juA.png
+    - assets/page-1/images/vector-jvQ.png
+    - assets/page-1/images/person-combination-svgrepo-com-1-rKS.png
+    - assets/page-1/images/mansion-f-svgrepo-com-1-XH2.png
+    - assets/page-1/images/clipboard-svgrepo-com-1-sCU.png
+    - assets/page-1/images/rectangle-63.png
+    - assets/page-1/images/rectangle-60-RB6.png
+    - assets/page-1/images/rectangle-68.png
+    - assets/page-1/images/rectangle-66.png
+    - assets/page-1/images/rectangle-67.png
+    - assets/page-1/images/applications-svgrepo-com-1-X6x.png
+    - assets/page-1/images/vector-wSp.png
+    - assets/page-1/images/map-pin-svgrepo-com-1.png
+    - assets/page-1/images/clipboard-svgrepo-com-1-Hha.png
+    - assets/page-1/images/auto-group-rvoa.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -1,80 +1,30 @@
-import 'package:dolibarrmobile/accueil.dart';
-import 'package:dolibarrmobile/commandes.dart';
-import 'package:dolibarrmobile/mon_profile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
+import 'dart:ui';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/utils.dart';
+import 'package:myapp/page-1/iphone-13-pro-max-10.dart';
+// import 'package:myapp/page-1/iphone-13-pro-max-1.dart';
+// import 'package:myapp/page-1/iphone-13-pro-max-5.dart';
+// import 'package:myapp/page-1/authentification.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: RootPage(),
-    );
-  }
-}
-
-class RootPage extends StatefulWidget {
-  const RootPage({super.key});
-
-  @override
-  State<RootPage> createState() => _RootPageState();
-}
-
-class _RootPageState extends State<RootPage> {
-  int currentPage = 0;
-  List<Widget> pages = [Accueil(), MonProfile(), Commandes()];
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text(
-                'Menu',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Accueil'),
-            ),
-            ListTile(
-              leading: Icon(Icons.account_circle),
-              title: Text('Mon Profil'),
-              onTap: () {
-                Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (BuildContext context) {
-                  return MonProfile();
-                }));
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.feed),
-              title: Text('Commandes'),
-            ),
-            ListTile(
-              leading: Icon(Icons.attach_money_sharp),
-              title: Text('Devis'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+	@override
+	Widget build(BuildContext context) {
+	return MaterialApp(
+		title: 'Flutter',
+		debugShowCheckedModeBanner: false,
+		scrollBehavior: MyCustomScrollBehavior(),
+		theme: ThemeData(
+		primarySwatch: Colors.blue,
+		),
+		home: Scaffold(
+		body: SingleChildScrollView(
+			child: Scene(),
+		),
+		),
+	);
+	}
 }
