@@ -1,7 +1,10 @@
 import 'package:dolibarrmobile/accueil.dart';
+import 'package:dolibarrmobile/ajout_utilisateur.dart';
 import 'package:dolibarrmobile/commandes.dart';
+import 'package:dolibarrmobile/connexion.dart';
 import 'package:dolibarrmobile/mon_profile.dart';
 import 'package:flutter/material.dart';
+import 'package:dolibarrmobile/liste_utilisateurs.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: RootPage(),
+      home:  CreateUserPage(),
     );
   }
 }
@@ -29,7 +32,7 @@ class RootPage extends StatefulWidget {
 
 class _RootPageState extends State<RootPage> {
   int currentPage = 0;
-  List<Widget> pages = [Accueil(), MonProfile(), Commandes()];
+  List<Widget> pages = [Connexion(), MonProfile(), Commandes(),];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +63,7 @@ class _RootPageState extends State<RootPage> {
               onTap: () {
                 Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (BuildContext context) {
-                  return MonProfile();
+                  return Connexion();
                 }));
               },
             ),
