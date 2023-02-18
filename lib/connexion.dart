@@ -37,7 +37,7 @@ class _ConnexionState extends State<Connexion> {
     create: (context) => _authProvider,
         child : SingleChildScrollView(
             child: Container(
-              margin:  EdgeInsets.all( 80),
+
                 padding: const EdgeInsets.symmetric(
                   vertical: 50.0,
                 ),
