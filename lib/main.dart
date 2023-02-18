@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:dolibarrmobile/liste_utilisateurs.dart';
 import 'package:dolibarrmobile/Create_groupe.dart';
 import 'package:dolibarrmobile/add_users_group.dart';
+import 'package:dolibarrmobile/create_product.dart';
+import 'package:dolibarrmobile/liste_produits.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: GroupListPage()
+      home: ProductListPage()
     );
   }
 }
