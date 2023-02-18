@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
             image_path: 'assets/images/utilisateurs.png',
           ),
           MyNavButton(
-            page: All_Products(),
+            page: All_products(),
             nom: 'Produits',
             image_path: 'assets/images/produits.png',
           ),
