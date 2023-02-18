@@ -1,7 +1,8 @@
-import 'package:dolibarrmobile/mon_profile.dart';
+// ignore_for_file: depend_on_referenced_packages
+
+import 'mon_profile.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter/widgets.dart';
 
 class Accueil extends StatelessWidget {
   const Accueil({super.key});
@@ -10,14 +11,14 @@ class Accueil extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Accueil'),
+        title: const Text('Accueil'),
         centerTitle: true,
       ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
+            const DrawerHeader(
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
@@ -33,37 +34,37 @@ class Accueil extends StatelessWidget {
                 ],
               ),
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.home),
               title: Text('Accueil'),
             ),
             ListTile(
-              leading: Icon(Icons.account_circle),
-              title: Text('Mon Profil'),
+              leading: const Icon(Icons.account_circle),
+              title: const Text('Mon Profil'),
               onTap: () {
                 Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (BuildContext context) {
-                  return MonProfile();
+                  return const MonProfile();
                 }));
               },
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.feed),
               title: Text('Commandes'),
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.attach_money_sharp),
               title: Text('Devis'),
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.delivery_dining_outlined),
               title: Text('Bons de livraison'),
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.format_list_bulleted_outlined),
               title: Text('Interventions'),
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.logout),
               title: Text('Déconnexion'),
             ),

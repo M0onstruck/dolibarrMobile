@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter/widgets.dart';
 
 class Commandes extends StatefulWidget {
   const Commandes({super.key});
@@ -15,7 +14,7 @@ class CommandesState extends State<Commandes> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Gestion des commandes'),
+        title: const Text('Gestion des commandes'),
       ),
     );
   }
