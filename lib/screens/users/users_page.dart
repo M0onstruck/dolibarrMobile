@@ -1,3 +1,4 @@
+import 'package:dolibarrmobile/screens/users/create_user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -42,7 +43,13 @@ class All_usersState extends State<All_users> {
         ),
         floatingActionButton: FloatingActionButton(
           child: Image.asset('assets/images/addusr.png'),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => CreateUser(),
+              ),
+            );
+          },
         ),
         body: FutureBuilder(
           future: futureUser,

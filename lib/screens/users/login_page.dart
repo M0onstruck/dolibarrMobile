@@ -51,26 +51,16 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.cyan,
       body: SingleChildScrollView(
         child: Column(children: [
-          SizedBox(
-            height: 50,
-          ),
           //Logo
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
-              child: Image.asset(
-                'assets/images/dolibarr.png',
-                height: 120,
-                width: double.infinity,
-              ),
+          Container(
+            child: Image.asset(
+              'assets/images/dolibarrlogo.png',
+              fit: BoxFit.fill,
+              height: 200,
             ),
-          ),
-          SizedBox(
-            height: 20,
           ),
           Text(
             'Authentification',
