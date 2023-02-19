@@ -18,12 +18,14 @@ class All_productsState extends State<All_products> {
   late Future futureProduct;
 
   Widget statusChecker(status) {
-    if (status == 1) {
+    if (status == '1') {
+      print(status);
       return Text(
         'En vente',
         style: GoogleFonts.oswald(fontSize: 15, color: Colors.green),
       );
     } else {
+      print(status);
       return Text(
         'Hors vente',
         style: GoogleFonts.oswald(fontSize: 15, color: Colors.red),
@@ -76,7 +78,7 @@ class All_productsState extends State<All_products> {
                     },
                     child: Container(
                         padding:
-                            EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                         decoration: BoxDecoration(
                           border: Border(
                             bottom: BorderSide(color: Colors.grey),
@@ -86,29 +88,26 @@ class All_productsState extends State<All_products> {
                           children: [
                             Expanded(
                               child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     snapshot.data[i]['label'],
                                     style: GoogleFonts.oswald(
-                                        fontSize: 25, color: Colors.black),
+                                        fontSize: 20, color: Colors.black),
                                   ),
                                   Text(
                                     snapshot.data[i]['description'],
                                     style: TextStyle(color: Colors.grey[600]),
                                   ),
                                   Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Icon(Icons.attach_money),
                                       Text(
-                                        snapshot.data[i]['price'],
-                                        style:
-                                            TextStyle(color: Colors.grey[500]),
-                                      ),
-                                      SizedBox(
-                                        width: 40,
+                                        'Prix : ' +
+                                            '${snapshot.data[i]['price']}',
+                                        style: GoogleFonts.oswald(
+                                            color: Colors.grey[500]),
                                       ),
                                       statusChecker(snapshot.data[i]['status'])
                                     ],
@@ -123,8 +122,9 @@ class All_productsState extends State<All_products> {
               );
             } else if (snapshot.hasError) {
               return Text('${snapshot.error}');
+            } else {
+              return Center(child: const CircularProgressIndicator());
             }
-            return Center(child: const CircularProgressIndicator());
           },
         ));
   }
